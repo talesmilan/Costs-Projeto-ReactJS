@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "projeto foda",
-      "budget": "10000",
+      "name": "teste",
+      "budget": "455",
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
@@ -10,17 +10,6 @@
       "cost": 0,
       "service": [],
       "id": 1
-    },
-    {
-      "name": "meu projeto 3",
-      "budget": "15000",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "service": [],
-      "id": 2
     }
   ],
   "categories": [
