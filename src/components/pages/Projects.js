@@ -5,10 +5,12 @@ import Container from '../layout/Container'
 import LinkButton from '../layout/LinkButton'
 import ProjectCard from '../project/ProjectCard'
 import {useState, useEffect} from 'react'
+import Loading from '../layout/Loading'
 
 function Projects() {
 
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     const location = useLocation()
     let message = ''
@@ -17,17 +19,21 @@ function Projects() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            setProjects(data)
-        })
-        .catch((err) => console.log(err))
+        setTimeout(
+            () => {
+                fetch('http://localhost:5000/projects', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }).then((resp) => resp.json())
+                .then((data) => {
+                    console.log(data)
+                    setProjects(data)
+                    setRemoveLoading(true)
+                })
+                .catch((err) => console.log(err))
+            }, 300)
 
     }, [])
 
@@ -39,17 +45,20 @@ function Projects() {
             </div>
             {message && <Message msg={message} type="success" /> }
             <Container customClass="start">
-                <ProjectCard />
                 {projects.length > 0 && 
-                    projects.map((project) => (
+                    (projects.map((project) => (
                         <ProjectCard
                             id={project.id} 
                             name={project.name}
-                            project={project.budget}
+                            budget={project.budget}
                             category={project.category.name}
                             key={project.id}
                             />
-                            ))}
+                        )))}
+                        {!removeLoading && <Loading />}
+                        {removeLoading && projects.length === 0 && 
+                            (<p>Não há projetos cadastrados!</p>
+                            )}
             </Container>
         </div>
     )
