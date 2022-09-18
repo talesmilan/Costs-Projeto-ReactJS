@@ -1,6 +1,6 @@
 # Projeto Costs
 
-Gerenciador de projetos feito em react.
+Gerenciador de projetos feito em reactJS.
 O projeto foi feito durante o curso de React do canal do YouTube Hora de Codar.
 Usa as seguintes dependências:  React Router Dom, Json Server, React Icons, UuId
 
