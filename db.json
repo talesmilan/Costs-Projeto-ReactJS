@@ -46,6 +46,54 @@
         }
       ],
       "id": 2
+    },
+    {
+      "name": "Projeto teste",
+      "budget": "50000",
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 710,
+      "service": [
+        {
+          "name": [
+            "Novo serviço"
+          ],
+          "cost": [
+            "500"
+          ],
+          "description": [
+            "Testando os serviços"
+          ],
+          "id": "6f505f59-b560-493a-8a5a-fbd3e8148607"
+        },
+        {
+          "name": [
+            "Novo serviço teste"
+          ],
+          "cost": [
+            "10"
+          ],
+          "description": [
+            "Só testando"
+          ],
+          "id": "67c4e25e-cc6e-426a-bc66-42962b80fe3a"
+        },
+        {
+          "name": [
+            "Testando denovo"
+          ],
+          "cost": [
+            "200"
+          ],
+          "description": [
+            "Faz isso aqui"
+          ],
+          "id": "4ed94567-1410-42d9-b33b-569a3b8820a3"
+        }
+      ],
+      "id": 3
     }
   ],
   "categories": [
