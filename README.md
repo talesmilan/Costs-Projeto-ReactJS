@@ -1,3 +1,9 @@
+# Projeto Costs
+
+Gerenciador de projetos feito em react.
+O projeto foi feito durante o curso de React do canal do YouTube Hora de Codar.
+Usa as seguintes dependências:  React Router Dom, Json Server, React Icons, UuId
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
