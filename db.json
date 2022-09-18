@@ -10,6 +10,42 @@
       "cost": 0,
       "service": [],
       "id": 1
+    },
+    {
+      "name": "www",
+      "budget": "6000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 1499,
+      "service": [
+        {
+          "name": [
+            "testando"
+          ],
+          "cost": [
+            "500"
+          ],
+          "description": [
+            "um teste"
+          ],
+          "id": "bbf2bb29-0816-4f18-a79e-618d2fa656d7"
+        },
+        {
+          "name": [
+            "teste"
+          ],
+          "cost": [
+            "999"
+          ],
+          "description": [
+            "testando"
+          ],
+          "id": "3fa09104-7795-4bde-9cec-4fc66b772971"
+        }
+      ],
+      "id": 2
     }
   ],
   "categories": [
