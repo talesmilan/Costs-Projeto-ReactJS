@@ -8,6 +8,7 @@ import Message from '../layout/Message'
 import ServiceForm from '../service/ServiceForm'
 import {parse, v4 as uuidv4} from 'uuid'
 import ServiceCard from '../service/ServiceCard'
+import { FaMoneyCheck } from 'react-icons/fa'
 
 function Project() {
 
@@ -94,7 +95,28 @@ function Project() {
 
     }
 
-    function removeService() {
+    function removeService(id, cost) {
+
+        const servicesUpdate = project.service.filter(
+            (service) => service.id !== id
+        )
+        const projectUpdate = project
+        projectUpdate.service = servicesUpdate
+        projectUpdate.cost = parseFloat(projectUpdate.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:5000/projects/${projectUpdate.id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(projectUpdate)
+        })
+        .then((resp) => resp.json() )
+        .then((data) => {
+            setProject(projectUpdate)
+            setServices(servicesUpdate)
+            setMessage('Serviço removido com sucesso!')
+            setType('success')
+        })
+        .catch(err => console.log(err))
 
     }
 
