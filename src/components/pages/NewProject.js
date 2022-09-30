@@ -11,21 +11,22 @@ function NewProject() {
         // initialize cost and service
         project.cost = 0
         project.service = []
-        
-        fetch("http://localhost:5000/projects", {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json',
-            },
-            body: JSON.stringify(project),
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            // redirect
-            navigate('/projects', {message: 'Projeto criado com sucesso!'})
-        })
-        .catch(err => console.log(err))
+        if (project.name && project.budget && project.category.name) {
+            fetch("http://localhost:5000/projects", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json',
+                },
+                body: JSON.stringify(project),
+            })
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data)
+                // redirect
+                navigate('/projects', {message: 'Projeto criado com sucesso!'})
+            })
+            .catch(err => console.log(err))
+        }
     }
 
     return (
